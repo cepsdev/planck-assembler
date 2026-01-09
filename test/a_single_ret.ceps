@@ -1,0 +1,40 @@
+
+
+sm{
+    S;
+    Actions{
+        act{
+         oblectamenta{
+          text{
+            asm{
+                dbg_print_cs_and_regs(0);dbg_print_data(0);
+                x64{
+                    info{
+
+                        I(
+                          P( P1 .. Pn ),                                 //Variable number of prefixes (one byte each)
+                          O( O1, O2, O3),                                // Upto three opcode bytes
+                          ModRM(Mod(Bits7_6), Reg(Bits5_3), RM(Bits2_0))             
+                          ||
+                          ModRM(Mod(Bits7_6), O(Bits5_3), RM(Bits2_0)),
+                          SIB(Scale(Bits_7_6),Index(Bits5_3), Base(Bits2_0)),
+                          Displacement(zero || one || two || four),
+                          Immediate
+                        );
+                        
+                   };
+                    
+                };
+                dbg_print_cs_and_regs(0);dbg_print_data(0);
+            };
+          };
+         };
+        };
+    };
+    states{Initial;Final;};
+    t{Initial;Final;act;};
+};
+
+Simulation{
+ Start{S;};
+};
