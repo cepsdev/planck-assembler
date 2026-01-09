@@ -18,10 +18,10 @@ sm{
                           ||
                           ModRM(Mod(Bits7_6), O(Bits5_3), RM(Bits2_0)),
                           SIB(Scale(Bits_7_6),Index(Bits5_3), Base(Bits2_0)),
-                          Displacement(zero || one || two || four),
-                          Immediate
+                          Displacement( empty || one_byte || two_bytes || four_bytes || eight_bytes),
+                          Immediate( empty || one_byte || two_bytes || four_bytes || eight_bytes)
                         );
-                        
+
                    };
                     
                 };
